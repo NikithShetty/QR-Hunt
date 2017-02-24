@@ -1,0 +1,100 @@
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sliding_decode_panel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+
+    sothree:umanoOverlay="false"
+    sothree:umanoPanelHeight="0dp"
+    sothree:umanoParallaxOffset="100dp"
+    sothree:umanoShadowHeight="4dp"
+    tools:context="com.nikith_shetty.qrhunt.ScannedResultFragment">
+
+    <!-- Main Layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:padding="16dp"
+            android:text="@string/result_text"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/resultDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/result_placeholder"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/scanMore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/scan_more_text" />
+
+        <Button
+            android:id="@+id/decodePanelUpBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Decode"/>
+
+    </LinearLayout>
+
+    <!-- Sliding Panel -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter the key to unlock" />
+
+        <EditText
+            android:id="@+id/decode_key_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+
+        <Button
+            android:id="@+id/decodeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Decode" />
+
+        <TextView
+            android:id="@+id/decodeResultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Your Decoded Message is"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/decodedResultDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

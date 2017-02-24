@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">QR Hunt</string>
+    <string name="scan_btn_text">SCAN QR CODE</string>
+    <string name="history_btn_text">HISTORY</string>
+    <string name="gen_btn_text">GENERATE BARCODE</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="result_text">YOUR SECRET MESSAGE IS :</string>
+    <string name="result_placeholder">No Result</string>
+    <string name="scanner_instruction">Point at the Barcode to be Scanned.Barcodes will be read automatically.</string>
+    <string name="scan_more_text">SCAN ANOTHER QR CODE</string>
+    <string name="history_title">SCANNED BARCODES</string>
+    <string name="pref_width">pref_width</string>
+    <string name="pref_width_title">Size of QR Code</string>
+    <string name="pref_width_summary">This size determines the size of the generated QR Code</string>
+</resources>
