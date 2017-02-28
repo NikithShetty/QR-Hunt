@@ -15,4 +15,5 @@
     <string name="pref_width">pref_width</string>
     <string name="pref_width_title">Size of QR Code</string>
     <string name="pref_width_summary">This size determines the size of the generated QR Code</string>
+    <string name="admob_interstitial_id">ca-app-pub-3033308269323603/5489170570</string>
 </resources>
