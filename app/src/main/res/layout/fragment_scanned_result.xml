@@ -16,13 +16,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:padding="16dp"
             android:text="@string/result_text"
             android:textAlignment="center"
             android:textSize="18sp"
@@ -42,12 +42,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
             android:text="@string/scan_more_text" />
 
         <Button
             android:id="@+id/decodePanelUpBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="70dp"
+            android:layout_marginLeft="70dp"
             android:text="Decode"/>
 
     </LinearLayout>
@@ -57,23 +61,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="false"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textStyle="bold"
             android:text="Enter the key to unlock" />
 
         <EditText
             android:id="@+id/decode_key_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:gravity="center"
             android:inputType="number"/>
 
         <Button
             android:id="@+id/decodeBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="70dp"
+            android:layout_marginLeft="70dp"
             android:text="Decode" />
 
         <TextView

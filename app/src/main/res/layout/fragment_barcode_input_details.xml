@@ -16,6 +16,7 @@
     <EditText
         android:id="@+id/text_msg"
         android:inputType="text"
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -35,6 +36,7 @@
     <EditText
         android:id="@+id/key_input"
         android:inputType="number"
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"/>
@@ -43,6 +45,8 @@
         android:id="@+id/startGenBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
         android:text="GENERATE BARCODE"/>
 
 </LinearLayout>
