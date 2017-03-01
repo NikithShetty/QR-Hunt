@@ -39,6 +39,31 @@
         android:drawableLeft="@mipmap/hist_icon"
         android:drawableStart="@mipmap/hist_icon"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+
+        android:gravity="bottom">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rateus"
+            android:src="@drawable/rateus"
+            android:background="@null"
+            android:paddingRight="35dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sharebut"
+            android:src="@drawable/share"
+            android:background="@null" />
+    </LinearLayout>
+
     <!--android:background="#3f51b5"-->
     <!--android:textColor="@color/white"-->
     <!--android:layout_margin="@dimen/activity_horizontal_margin"-->
