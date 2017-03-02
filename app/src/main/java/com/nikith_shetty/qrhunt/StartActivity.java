@@ -1,6 +1,7 @@
 package com.nikith_shetty.qrhunt;
+ import com.pushbots.push.Pushbots;
 
-import com.pushbots.push.Pushbots;
+
 
 import android.Manifest;
 import android.accounts.Account;
@@ -30,9 +31,10 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+		Pushbots.sharedInstance().init(this);
 //TODO uncomment this before release build
-//        Pushbots.sharedInstance().init(this);
-//        setPushbotsAlias();
+        
+        setPushbotsAlias();
 
         setContentView(R.layout.activity_start);
         checkPlayServices();

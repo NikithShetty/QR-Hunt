@@ -25,6 +25,7 @@ dependencies {
     repositories {
         mavenCentral()
     }
+compile 'com.pushbots:pushbots-lib:+@aar'
 
     repositories {
         jcenter()
@@ -32,7 +33,7 @@ dependencies {
             url "https://jitpack.io"
         }
     }
-    compile 'com.pushbots:pushbots-lib:+@aar'
+    
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

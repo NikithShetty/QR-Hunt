@@ -20,6 +20,9 @@ public class AboutActivity extends AppCompatActivity implements OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
+        getSupportActionBar().setTitle("About Us");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         github=(ImageButton)findViewById(R.id.github);
         github.setOnClickListener(this);
 
