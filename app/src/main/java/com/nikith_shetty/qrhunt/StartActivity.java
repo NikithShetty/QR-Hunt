@@ -30,9 +30,9 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Pushbots.sharedInstance().init(this);
-        setPushbotsAlias();
+//TODO uncomment this before release build
+//        Pushbots.sharedInstance().init(this);
+//        setPushbotsAlias();
 
         setContentView(R.layout.activity_start);
         checkPlayServices();

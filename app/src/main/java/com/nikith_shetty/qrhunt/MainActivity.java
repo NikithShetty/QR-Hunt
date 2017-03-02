@@ -2,6 +2,7 @@ package com.nikith_shetty.qrhunt;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Handler;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -13,19 +14,26 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
+import static com.nikith_shetty.qrhunt.R.id.rateus;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button scanBtn, genBtn, histBtn;
     InterstitialAd mInterstitialAd;
+    MaterialStyledDialog dialogHeader=null;
     private InterstitialAd interstitial;
     private final Handler handler = new Handler();
 
@@ -40,6 +48,66 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         scanBtn.setOnClickListener(this);
         genBtn.setOnClickListener(this);
         histBtn.setOnClickListener(this);
+
+        ImageButton share=(ImageButton)findViewById(R.id.sharebut);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String str = "https://play.google.com/store/apps/details?id=" + getPackageName();
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,
+                        "Get along with the digital Treasure Hunt\n\nDownload the \""+ getString(R.string.app_name)  +"\" app on playstore now:\n" + str);
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+            }
+        });
+
+
+
+        ImageButton rateus= (ImageButton) findViewById(R.id.rateus);
+        rateus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogHeader.show();
+            }
+        });
+
+
+        dialogHeader = new MaterialStyledDialog(this)
+                // .setHeaderDrawable(R.drawable.header)
+                .setHeaderColor(R.color.alizarin)
+                .setIcon(R.drawable.rateus)
+                .withDialogAnimation(true)
+                .setTitle("Glad you liked ♥ \nthe "+ getString(R.string.app_name) +" app")
+                .setDescription("Your 5 ★★★★★ Rating will help us serve you better.\nKeep supporting us :)")
+                .setPositive("Give us 5", new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(MaterialDialog dialog, DialogAction which) {
+                        final String appPackageName = getPackageName();
+                        try {
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                        } catch (android.content.ActivityNotFoundException anfe) {
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                        }
+                    }
+                })
+                .setNegative("Suggestions", new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(MaterialDialog dialog, DialogAction which) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + getString(R.string.myEmail)+","+getString(R.string.nikhilEmail)));
+                        startActivity(intent);
+                        dialog.dismiss();
+                    }
+                })
+                .build();
+
+
+
+
+
+
+
     }
 
     @Override

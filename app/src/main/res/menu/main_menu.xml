@@ -6,5 +6,5 @@
         <!--android:title="HELP"/>-->
     <item
         android:id="@+id/about"
-        android:title="ABOUT US"/>
+        android:title="About us"/>
 </menu>
